@@ -69,6 +69,15 @@ router.get('/dashboard', (req, res)=>{
     }
 });
 
+// route to the foreign_exchange
+router.get('/foreign_exchange', (req, res)=>{
+    if(req.session.user){
+        res.render('foreign_exchange', {title: 'foreign_exchange', user: req.session.user});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
 // route to the currency_converter
 router.get('/currency_converter', (req, res)=>{
     if(req.session.user){
