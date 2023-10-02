@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    outline: none;
+}
+
+.wrapper{
+    position: relative;
+    margin-left: 500px;
+    margin-top: 150px;
+    max-width: 500px;
+    padding-top: 30px;
+    width: 100%;
+    background: #ffffffd2;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    border-color: rgb(87, 0, 128);
+    box-shadow: 0 5px 10px rgb(87, 0, 128);
+}
+
+.app-details{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.app-title{
+    font-size: 1.6em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+label{
+    /* display: block; */
+    margin-left: 130px;
+    font-weight: 600;
+}
+
+input#amount{
+    align-items: center;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-left: 130px;
+    /* display: block; */
+    margin-right: 50px;
+    width: 50%;
+    border-bottom: 2px solid rgb(87, 0, 128);
+    color: #7a789d;
+    margin-bottom: 2em;
+    padding: 0.5em;
+}
+
+input#amount:focus{
+    color: rgb(141, 0, 206);
+    border-color: rgb(141, 0, 206);
+}
+
+.dropdowns{
+    display: flex;
+    align-items: center;
+    margin-right: 90px;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+select{
+    width: 150px;
+    padding: 0.6em;
+    font-size: 1em;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
+    border-radius: 0.2em;
+    appearance: none;
+    background-color: rgb(87, 0, 128);
+    color: #fff;
+    text-align: center;
+}
+
+select option{
+    background-color: #fff;
+    color: #02002c;
+}
+
+select:hover{
+    background-color: rgb(141, 0, 206);
+}
+
+.button{
+    font-size: 1em;
+    width: 150px;
+    background-color: rgb(87, 0, 128);
+    padding: 1em 0 ;
+    margin-top: 2em;
+    margin-left: 180px;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
+    border-radius: 0.2em;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: rgb(141, 0, 206);
+}
+
+#result{
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 1em;
+    color: #02002c;
+    background-color: #e5dbff;
+    padding: 0.8em 0;
+}
+

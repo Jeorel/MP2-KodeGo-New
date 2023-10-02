@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- locals.title?title:'Chat App' -%></title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <!-- boxicons css -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/static/currency_converter.css">
+    <link rel="stylesheet" href="/static/dashboard.css">
+
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar">
+    <div class="dashboard">
+        <a href="/dashboard">
+            <h2>Dashboard</h2>
+        </a>
+    </div>
+    <div class="logout">
+        <a href="/logout">
+            <form action="/logout" method="POST">
+                <button class="btn btn-danger">Logout</button>
+            </form>
+        </a>
+    </div>
+</nav>
+
+<!-- sidebar -->
+<div class="sidebar">
+    <a href="/currency_converter">
+        <div class="sidebar-menu">
+            <span class='bx bxs-calculator'></span>
+            <p>Currency Converter</p>
+        </div>
+    </a>
+</div>
+
+<!-- main dashboard -->
+
+<div class="main-dashboard">
+    <div class="title">
+      <h1>Welcome!</h1><h3 class="profile-name"><%= locals.user?user:'No email found'  %></h3>
+    </div>
+</div>
+
+    <!-- Script With Array of Supported Country Codes -->
+    <script src="/static/currency-codes.js"></script>
+    <!-- Script With API Key -->
+    <script src="/static/api-key.js"></script>
+    <!-- Script -->
+    <script src="/static/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

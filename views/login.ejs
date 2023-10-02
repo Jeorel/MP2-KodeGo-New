@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- locals.title?title:'Chat App' -%></title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <!-- unicons css -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- customized css -->
+    <link rel="stylesheet" href="/static/login.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="forms">
+
+            <!-- Login Form -->
+            <div class="form login">
+                <span class="title">Login</span>
+
+                <form action="/login" method="POST">
+                    <div class="input-field">
+                        <input type="email" placeholder="Enter your email" name="email" required>
+                    <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" name="password" required>
+                    <i class="uil uil-lock icon"></i>
+                    <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Login">
+                    </div>
+
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Don't have an account?
+                        <a href="#" class="text signup-link">Signup now</a>
+                    </span>
+                </div>
+
+                <div class="alert">
+                    <% if(locals.errors) {%>
+                           <div class="alert alert-danger text-center">
+                               <%= errors%>
+                           </div>
+                       <%}%>
+                        <% if(locals.isInvalid) {%>
+                           <div class="alert alert-danger text-center">
+                               <%= isInvalid%>
+                           </div>
+                       <%}%>
+                    <% if(locals.logout) {%>
+                           <div class="alert alert-success text-center">
+                               <%= logout%>
+                           </div>
+                    <%}%>
+                </div>
+
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title">Registration</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" required>
+                    <i class="uil uil-user icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                    <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Create a password" required>
+                    <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm your password" required>
+                    <i class="uil uil-lock icon"></i>
+                    <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="input-field button">
+                        <input type="button" value="Submit">
+                    </div>
+
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already have an account?
+                        <a href="#" class="text login-link">Login here</a>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<script src="/static/loginapp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
