@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- locals.title?title:'Chat App' -%></title>
+    <title><%- locals.title?title:'Currency Converter App' -%></title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">
@@ -14,53 +14,39 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/static/currency_converter.css">
     <link rel="stylesheet" href="/static/dashboard.css">
 
 </head>
 <body>
 
 <!-- navbar -->
-<nav class="navbar">
-    <div class="dashboard">
-        <a href="/dashboard">
-            <h2>Dashboard</h2>
-        </a>
-    </div>
-    <div class="logout">
-        <a href="/logout">
-            <form action="/logout" method="POST">
-                <button class="btn btn-danger">Logout</button>
-            </form>
-        </a>
-    </div>
-</nav>
 
-<!-- sidebar -->
-<div class="sidebar">
-    <a href="/foreign_exchange">
-        <div class="sidebar-menu">
-            <span class='bx bxs-dollar-circle'></span>
-            <p>Foreign Exchange</p>
-        </div>
-    </a>
-    <a href="/currency_converter">
-        <div class="sidebar-menu">
-            <span class='bx bxs-calculator'></span>
-            <p>Currency Converter</p>
-        </div>
-    </a>
-</div>
-
-
+<header class="header">
+    <nav class="navbar">
+            <a href="/dashboard" class="nav_logo">Dashboard</a>
+            <ul class="nav_items">
+                <li class="nav_item">
+                    <a href="/foreign_exchange" class="nav_link"><i class='bx bx-dollar-circle'></i> Foreign Exchange</a>
+                    <a href="/currency_converter" class="nav_link"><i class='bx bx-calculator' ></i> Currency Converter</a>
+                </li>
+            </ul>
+            <a href="/logout">
+                <form action="/logout" method="POST">
+                    <button action="/logout" method="POST" class="btn btn-danger">Logout</button>
+                </form>
+            </a>
+    </nav>
+</header>
 
 <!-- main dashboard -->
 
-<div class="main-dashboard">
-    <div class="title">
-      <h1>Welcome!</h1><h3 class="profile-name"><%= locals.user?user:'No email found'  %></h3>
+<section class="home">
+    <div class="main-dashboard">
+        <div class="wrapper">
+            <h6>Welcome! <%= locals.user?user:'No email found'  %></h6>
+        </div>
     </div>
-</div>
+</section>
 
     <!-- Script With Array of Supported Country Codes -->
     <script src="/static/currency-codes.js"></script>
